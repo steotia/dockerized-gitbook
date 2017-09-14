@@ -19,16 +19,17 @@
 
 Start from a Base image of your choice and do the following
 
-Node App
+**Exercise 3.0.1.1** build a NPM executable
 
-1. Create an executable container which has node and npm installed with` npm install` as the default command
-2. Use this container to install node modules \(in your local filesystem\) as mentioned in [https://github.com/steotia/nodejs-pipeline/blob/gitbook/src/package.json](https://github.com/steotia/nodejs-pipeline/blob/gitbook/src/package.json)
-3. Add a layer to run `gulp bundle` and 
+1. Create an Image which can run `npm install`. Create a `package.json` and copy it inside the image. Run this image and note if the dependencies are installed every time. Why?
+2. Change the Image to install the dependencies in the Image itself.
+3. Share the node\_modules folder when running the container so that npm runs inside the container but the dependencies get installed outside.
 
-1. Take the source code at [https://github.com/steotia/nodejs-pipeline/tree/gitbook/src](https://github.com/steotia/nodejs-pipeline/tree/gitbook/src) 
-2. Start with an base image of your choice
-3. Copy the package.json and perform an `npm install`
-4. Copy the source code and run the application
-5. 
+**Exercise 3.0.1.2** Dockerize a Node app
+
+1. Take the source at [https://github.com/steotia/sample-nodejs](https://github.com/steotia/sample-nodejs) and dockerize it to run on port 3000.
+
+_Hint: You will need to take a base image with node, copy the source code, do an npm install, expose port 3000 and finally run it_
+
 
 
