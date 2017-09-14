@@ -1,7 +1,8 @@
 # Summary
 
 * [Introduction](README.md)
-* [Overview](chapter1.md)
-  * [Running a command as a Docker container](chapter1/running-a-command-as-a-docker-container.md)
+* [Docker Architecture](chapter1.md)
+* [Docker Image Basics](chapter1/running-a-command-as-a-docker-container.md)
+* [Dockerizing an App](dockerizing-an-app.md)
 * [Solutions](solutions.md)
 

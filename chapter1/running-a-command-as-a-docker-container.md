@@ -1,8 +1,8 @@
-# 1.1 Hello World
+# 2.0 Hello World
 
 Lets take a simple long running command as `while true; do echo hello world; sleep 1; done` and try to run it in different environments to get a feel of basic docker commands.
 
-## Exercise 1.1
+## Exercise 2.1
 
 1. Try it in a
    1. terminal
@@ -20,7 +20,7 @@ _Hint_
 
 `docker run --rm alpine sh -c "while true; do echo hello world; sleep 1; done"`
 
-# 1.2 What is a Docker Image?
+# 2.2 What is a Docker Image?
 
 As shown earlier, when you do a `docker run` docker daemon pulls the image from a registry. Actually, `docker run` is a combination of `docker pull` and `docker start`. As the name suggests, pull pulls the image and start takes the image and runs the image as a Docker container.
 
@@ -35,7 +35,7 @@ Exercise 1.2
 1. Run 2 containers and observe that these containers are in the process list of your Host OS \(Mac\)
 2. Kill the process and observe the effect on the container
 
-# 1.3 Docker Image fundamentals
+# 2.3 Docker Image fundamentals
 
 Note that when you pulled in `ubuntu` there are 5 `Pull Complete` messages. Now lets understand at the construction of a Docker Image.
 
@@ -43,7 +43,7 @@ Note that when you pulled in `ubuntu` there are 5 `Pull Complete` messages. Now 
 
 A Dockerfile is a text file which contains all instructions needed to create a Docker Image. Even Ubuntu or Alpine images we tried earlier have a Dockerfile and each line in a Dockerfile is a separate layer and has an ID \(digest\).
 
-### Exercise 1.3.1
+### Exercise 2.3.1
 
 1. Find out the Dockerfiles representing the `ubuntu` and `alpine` images we pulled earlier and match the number of lines in the Dockerfiles to the number of `Pull Completes`. \(You need not try to understand what's happening at each layer of these Dockerfiles yet!\)
 
@@ -71,7 +71,37 @@ RUN apk update
 RUN apk add git
 ```
 
-### Exercise 1.3.2
+### Exercise 2.3.2
+
+1. Find out the latest version of `alpine` and replace `latest` with the correct version.
+2. Create a Dockerfile, build the image.
+3. Find out the version of git installed in the container.
+4. Initialise a new git repo in the container.
+5. Can you initialise a git repo outside the container?
+6. Try the same using `ubuntu` and observe differences.
+7. Take `ubuntu` base image, install curl and run curl from inside the container.
+
+### Exercise 2.3.3
+
+###### Docker container with nginx installed + your index.html
+
+_Bonus section: Docker Hub integration_
+
+1. Create a Dockerfile with nginx
+2. Build an Image from this Dockerfile and push this Image into your personal Docker Hub Registry
+3. Delete local image
+4. Do a Docker pull and get your Image
+5. Create an index.html and put it into the Image
+6. Run the container and access the page
+7. Modify the page and deploy change to the container
+8. Use the `curl` container you created in `2.3.2.7` to curl your static site
+
+_Hint_
+
+```
+FROM nginx:alpine
+COPY . /usr/share/nginx/html
+```
 
 
 
