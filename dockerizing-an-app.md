@@ -17,7 +17,7 @@
 
 # 3.1 Container view to the outside world
 
-You would have noticed that a running container interacts with the Host OS via port `EXPOSE`, filesystem mounted via `VOLUME` , takes in environment variables via `ENV`, so let's look at a sample Dockerfile which uses most of the commands discussed earlier.
+You would have noticed that a running container interacts with the Host OS via port `EXPOSE`, filesystem mounted via `VOLUME` , takes in environment variables via `ENV`, so let's look at a few Dockerfiles.
 
 ```
 FROM debian:jessie
@@ -42,7 +42,6 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 EXPOSE 80 443
 CMD [ "nginx", "-g", "daemon off;" ]
 ```
-
 
 ## Exercise 3.1.1
 
