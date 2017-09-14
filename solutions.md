@@ -1,7 +1,4 @@
-# Exercise 1.0
+Coming soon!
 
-1. `docker version`
-2. `docker`
-3. 
 
 

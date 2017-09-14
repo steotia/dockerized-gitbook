@@ -17,7 +17,7 @@
 
 # Exercise 3.0.1
 
-Start from a Base image of your choice and do the following
+Start from a Base image of your choice and do the following \(I have taken example of a node app, you are free to do the same with a programming language of your choice\)
 
 **Exercise 3.0.1.1** build a NPM executable
 
@@ -30,6 +30,4 @@ Start from a Base image of your choice and do the following
 1. Take the source at [https://github.com/steotia/sample-nodejs](https://github.com/steotia/sample-nodejs) and dockerize it to run on port 3000.
 
 _Hint: You will need to take a base image with node, copy the source code, do an npm install, expose port 3000 and finally run it_
-
-
 
